@@ -6,6 +6,7 @@
     <title>Minecraft by Poti - Najlepszy Launcher 1.8.9</title>
     <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
     <style>
+        /* ===== GLOBALNE ===== */
         body {
             margin: 0;
             padding: 0;
@@ -15,6 +16,7 @@
             font-size: 14px;
         }
 
+        /* ===== PASEK NAWIGACJI ===== */
         .top-bar {
             background-color: #1a8000;
             border-bottom: 3px solid #115500;
@@ -39,8 +41,6 @@
             font-weight: bold;
             text-shadow: 2px 2px #0a3300;
             letter-spacing: 1px;
-            text-decoration: none;
-            color: white;
         }
 
         .nav-links a {
@@ -56,6 +56,7 @@
             color: #b3ff99;
         }
 
+        /* ===== KONTENER ===== */
         .container {
             max-width: 960px;
             margin: 20px auto;
@@ -65,6 +66,7 @@
             border-radius: 4px;
         }
 
+        /* ===== BANER GŁÓWNY ===== */
         .hero-banner {
             background: linear-gradient(to bottom, #24b300, #177a06);
             padding: 30px;
@@ -112,6 +114,7 @@
             text-shadow: 1px 1px #115500;
         }
 
+        /* ===== PRZYCISK POBIERANIA ===== */
         .download-btn {
             display: inline-block;
             background: linear-gradient(to bottom, #8ee04e, #5cb81a);
@@ -149,6 +152,7 @@
             display: inline-block;
         }
 
+        /* ===== KOLUMNY CECH ===== */
         .features-grid {
             display: flex;
             flex-wrap: wrap;
@@ -181,6 +185,7 @@
             line-height: 1.5;
         }
 
+        /* ===== STOPKA ===== */
         .footer {
             text-align: center;
             font-family: Arial, sans-serif;
@@ -191,6 +196,7 @@
             border-top: 2px dashed #ddd;
         }
 
+        /* ===== RWD ===== */
         @media (max-width: 768px) {
             .hero-banner { padding: 15px; }
             .top-bar-content { flex-direction: column; gap: 10px; }
@@ -202,49 +208,50 @@
 
 <div class="top-bar">
     <div class="top-bar-content">
-        <a href="index.html" class="logo-text">poti.js.org</a>
+        <div class="logo-text">minecraftbypoti.pl</div>
         <div class="nav-links">
             <a href="index.html">Launcher</a>
             <a href="https://github.com/potiye-rgb/Minecraft-by-Poti/releases" target="_blank">Wersje</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="kontakt.html">Kontakt</a> 
         </div>
     </div>
 </div>
 
 <div class="container">
+
     <div class="hero-banner">
         <div class="launcher-image-placeholder">
             <img src="podglad.png" alt="Launcher Preview">
         </div>
 
         <div class="hero-content">
-            <h1>Minecraft by Poti v1.0.0</h1>
-            <p>Zoptymalizowany launcher Minecraft 1.8.9. Pełna integracja z paczką PotiCraft, Discord RPC oraz wsparcie dla trybu No-Premium.</p>
+            <h1>Minecraft by Poti v1.0.1</h1>
+            <p>Zaktualizowany launcher 1.8.9 z nowym systemem automatycznych aktualizacji oraz wbudowanym menu modów. Graj bez przeszkód z pełnym wsparciem dla kont Microsoft.</p>
             
-            <a href="https://github.com/potiye-rgb/Minecraft-by-Poti/releases/download/v1.0.0/Minecraft_by_Poti_Setup_1.0.0.exe" class="download-btn">
+            <a href="https://github.com/potiye-rgb/Minecraft-by-Poti/releases/download/v1.0.1/Minecraft_by_Poti_Setup_1.0.1.exe" class="download-btn">
                 POBIERZ INSTALATOR .EXE &#11015;
             </a>
             
             <div class="stats">
-                Wersja stabilna: <strong>1.0.0</strong> | Platforma: <strong>Windows (x64)</strong>
+                Wersja stabilna: <strong>1.0.1</strong> | Platforma: <strong>Windows (x64)</strong>
             </div>
         </div>
     </div>
 
     <div class="features-grid">
         <div class="feature-col">
-            <h3>Konta Microsoft</h3>
-            <p>Implementacja logowania OAuth przez serwery Microsoftu. Launcher nie przechowuje Twoich danych. (Status: Funkcja w trakcie optymalizacji stabilności - zalecany tryb No-Premium).</p>
+            <h3>Stabilne Logowanie</h3>
+            <p>W pełni naprawione logowanie dla kont Microsoft oraz trybu Offline. Koniec z błędami przy logowaniu Premium – wchodzisz na serwer za pierwszym razem.</p>
         </div>
 
         <div class="feature-col">
-            <h3>Paczka PotiCraft</h3>
-            <p>Automatyczna weryfikacja i pobieranie plików paczki 1.8.9. Skonfigurowany AssetIndex eliminuje crashe podczas startu gry. Klikasz i grasz.</p>
+            <h3>Menu Modów</h3>
+            <p>Instaluj domyślnie proponowane modyfikacje bezpośrednio w launcherze. Baza modów będzie stale rozwijana w nadchodzących aktualizacjach.</p>
         </div>
 
         <div class="feature-col">
-            <h3>Discord RPC</h3>
-            <p>Pełna synchronizacja statusu. Twoi znajomi widzą aktualną wersję gry oraz czy aktualnie przebywasz w menu głównym czy w ustawieniach.</p>
+            <h3>Inteligentny Updater</h3>
+            <p>Od wersji 1.0.1 launcher sam dba o swoją aktualność. Gdy pojawi się nowa wersja, otrzymasz powiadomienie bezpośrednio w aplikacji.</p>
         </div>
     </div>
 
@@ -253,6 +260,7 @@
         Minecraft is a trademark of Mojang Synergies AB. This launcher is not affiliated with Mojang or Microsoft.<br>
         <small>Created for the MC Community.</small>
     </div>
+
 </div>
 
 </body>
