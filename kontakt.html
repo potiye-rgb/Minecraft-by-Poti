@@ -1,164 +1,293 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Minecraft by Poti</title>
-    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Minecraftia', Tahoma, sans-serif;
-            background: url('https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/dirt.png') repeat;
-            color: #333;
-            font-size: 14px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt - Minecraft by Poti</title>
+<link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5445249484810816" crossorigin="anonymous"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .top-bar {
-            background-color: #1a8000;
-            border-bottom: 3px solid #115500;
-            padding: 10px 0;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+body {
+  font-family: 'Minecraftia', monospace;
+  background-image: url('https://i.pinimg.com/1200x/6f/9e/0b/6f9e0b30b85782a1d5015b6c6eb5e105.jpg');
+  background-repeat: repeat;
+  background-size: 512px 256px;
+  image-rendering: pixelated;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+}
 
-        .top-bar-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 15px;
-        }
+/* Winieta - przyciemnienie jak w grze */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
 
-        .logo-text {
-            font-size: 20px;
-            font-weight: bold;
-            text-shadow: 2px 2px #0a3300;
-            letter-spacing: 1px;
-            text-decoration: none;
-            color: white;
-        }
+.topbar {
+  background: #1a5c00;
+  border-bottom: 3px solid #0d3a00;
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 11px 18px;
+}
+.logo { font-size: 16px; color: #c6ff9e; text-shadow: 2px 2px 0 #042900; text-decoration: none; }
+.nav a {
+  color: #d8ffc2; text-decoration: none; font-size: 10px;
+  margin-left: 18px; text-shadow: 1px 1px 0 #042900;
+  transition: color 0.15s;
+}
+.nav a:hover { color: #fff; }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 12px;
-            text-shadow: 1px 1px #0a3300;
-        }
+/* Struktura layoutu z reklamami */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            box-shadow: 0 0 25px rgba(0,0,0,0.7);
-            padding: 40px;
-            border-radius: 4px;
-        }
+.side-ad {
+  width: 160px;
+  margin-top: 26px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+}
 
-        h1 {
-            color: #1a8000;
-            border-bottom: 2px solid #1a8000;
-            padding-bottom: 10px;
-            font-size: 22px;
-        }
+.wrapper { 
+  max-width: 700px; 
+  margin: 26px 0; 
+  padding: 0 14px; 
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+}
 
-        .contact-card {
-            background: #fafafa;
-            border: 1px solid #eee;
-            padding: 25px;
-            margin-top: 20px;
-        }
+.card {
+  background: #1c1c1c;
+  border: 3px solid #3a3a3a;
+  border-bottom-color: #111; border-right-color: #111;
+  box-shadow: 5px 5px 0 #000;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+.card-header {
+  font-size: 12px; color: #7dff3e;
+  text-shadow: 1px 1px 0 #000;
+  border-bottom: 2px solid #2e6600;
+  padding: 13px 20px; background: #181818;
+  letter-spacing: 1px;
+}
 
-        .contact-method {
-            margin-bottom: 30px;
-        }
+.contact-block {
+  padding: 22px 24px;
+  border-bottom: 2px solid #242424;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.contact-block:last-child { border-bottom: none; }
 
-        .contact-method h3 {
-            margin: 0 0 10px 0;
-            font-size: 16px;
-            color: #111;
-        }
+.contact-icon {
+  width: 48px; 
+  height: 48px; 
+  flex-shrink: 0;
+  background: #0a2200; 
+  border: 2px solid #2e6600;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  padding: 6px;
+}
 
-        .contact-method p {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.5;
-        }
+.contact-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
 
-        .status-tag {
-            display: inline-block;
-            background: #eee;
-            padding: 4px 8px;
-            font-size: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-        }
+.contact-info h3 {
+  font-size: 10px; color: #a8e870;
+  text-shadow: 1px 1px 0 #000;
+  margin-bottom: 8px; letter-spacing: 0.5px;
+}
+.contact-info p {
+  font-family: Arial, sans-serif; font-size: 13px;
+  color: #aaa; line-height: 1.65; margin-bottom: 6px;
+}
+.contact-val {
+  font-family: 'Minecraftia', monospace;
+  font-size: 12px; color: #fff;
+  background: #111; border: 1px solid #333;
+  padding: 6px 12px; display: inline-block; margin-top: 4px;
+}
+.contact-val a { color: #7dff3e; text-decoration: none; }
+.contact-val a:hover { text-decoration: underline; }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #1a8000;
-            text-decoration: none;
-            font-size: 12px;
-        }
+.badge-status {
+  display: inline-block;
+  font-size: 10px; padding: 3px 9px; margin-top: 10px;
+  font-family: monospace;
+}
+.badge-ok { background: #0a2200; border: 1px solid #2e6600; color: #7dff3e; }
+.badge-soon { background: #1a1200; border: 1px solid #664400; color: #cc8800; }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
+.info-box {
+  padding: 18px 24px;
+  font-family: Arial, sans-serif; font-size: 13px;
+  color: #888; line-height: 1.7;
+}
+.info-box strong { color: #aaa; }
 
-        .footer {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: #777;
-            margin-top: 40px;
-            padding-bottom: 20px;
-        }
-    </style>
+.back-link {
+  display: inline-block;
+  font-size: 11px; color: #7dff3e; text-decoration: none;
+  text-shadow: 1px 1px 0 #000;
+  margin-bottom: 8px;
+  transition: color 0.15s;
+}
+.back-link:hover { color: #fff; }
+
+.footer {
+  background: #111;
+  border: 3px solid #2a2a2a;
+  border-bottom-color: #000; border-right-color: #000;
+  box-shadow: 5px 5px 0 #000;
+  padding: 20px 28px;
+  margin-bottom: 28px;
+  font-family: Arial, sans-serif; font-size: 12px;
+  color: #888; text-align: center; line-height: 1.7;
+}
+.footer strong { color: #bbb; }
+
+@media (max-width: 1100px) {
+  .side-ad { display: none; }
+  .wrapper { margin: 26px auto; }
+}
+
+@media (max-width: 640px) {
+  .topbar-inner { flex-direction: column; gap: 8px; }
+  .nav a { margin: 0 8px; }
+  .contact-block { flex-direction: column; }
+}
+</style>
 </head>
 <body>
 
-<div class="top-bar">
-    <div class="top-bar-content">
-        <a href="index.html" class="logo-text">mc.poti.pl</a>
-        <div class="nav-links">
-            <a href="index.html">Launcher</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="logo">minecraftbypoti.pl</a>
+    <div class="nav">
+      <a href="index.html">Launcher</a>
+      <a href="https://github.com/potiye-rgb/Minecraft-by-Poti/releases" target="_blank">Wersje</a>
+      <a href="kontakt.html">Kontakt</a>
     </div>
+  </div>
 </div>
 
-<div class="container">
-    <h1>KANALY KONTAKTOWE</h1>
-    
-    <div class="contact-card">
-        <div class="contact-method">
-            <h3>PERSONALNY KONTAKT</h3>
-            <p>Bezpośrednia komunikacja z autorem projektu:</p>
-            <p>Discord: <strong>potiye</strong></p>
-            <div class="status-tag">DOSTEPNE: WIADOMOSCI PRYWATNE</div>
-        </div>
+<div class="main-container">
 
-        <div class="contact-method">
-            <h3>SERWER SPOLECZNOSCI</h3>
-            <p>Oficjalny serwer Discord projektu Minecraft by Poti.</p>
-            <p>Link: <em>Wkrótce zostanie opublikowany</em></p>
-            <div class="status-tag" style="background: #fff3cd;">STATUS: W PRZYGOTOWANIU</div>
+  <aside class="side-ad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5445249484810816"
+         data-ad-slot="CONTACT_SIDE_LEFT"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+  <div class="wrapper">
+
+    <a href="index.html" class="back-link">&lt; POWROT DO STRONY GLOWNEJ</a>
+
+    <div class="card">
+      <div class="card-header">KANALY KONTAKTOWE</div>
+
+      <div class="contact-block">
+        <div class="contact-icon">
+          <img src="email.png" alt="" onerror="this.style.display='none'">
         </div>
+        <div class="contact-info">
+          <h3>EMAIL</h3>
+          <p>Pytania ogolne, bledy, sugestie dotyczace launchera.</p>
+          <div class="contact-val"><a href="mailto:kontakt@minecraftbypoti.pl">kontakt@minecraftbypoti.pl</a></div>
+          <div class="badge-status badge-ok">&#10004; AKTYWNY</div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-icon">
+          <img src="discord.png" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="contact-info">
+          <h3>DISCORD - PERSONALNY</h3>
+          <p>Bezposrednia komunikacja z autorem projektu.</p>
+          <div class="contact-val">potiye</div>
+          <div class="badge-status badge-ok">&#10004; DOSTEPNE: WIADOMOSCI PRYWATNE</div>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-icon">
+          <img src="serwer.png" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="contact-info">
+          <h3>SERWER SPOLECZNOSCI</h3>
+          <p>Oficjalny serwer Discord projektu Minecraft by Poti.</p>
+          <div class="contact-val">Link zostanie opublikowany wkrotce</div>
+          <div class="badge-status badge-soon">&#9888; W PRZYGOTOWANIU</div>
+        </div>
+      </div>
+
     </div>
 
-    <a href="index.html" class="back-link">&lt; POWRÓT DO STRONY GŁÓWNEJ</a>
-</div>
+    <div class="card">
+      <div class="card-header">ZGLASZANIE BLEDOW</div>
+      <div class="info-box">
+        Masz problem lub znalazles blad? Daj znac na <strong>Discordzie</strong>! To najszybsza droga, zeby uzyskac pomoc i pogadac bezposrednio z tworca.<br><br>
+        <strong>Moj username na Discord znajdziesz powyzej.</strong>
+      </div>
+    </div>
 
-<div class="footer">
-    © 2026 <strong>Minecraft by Poti</strong>. Projekt niezależny.
-</div>
+    <div class="card">
+      <div class="card-header">ZANIM NAPISZESZ</div>
+      <div class="info-box">
+        Zanim napiszesz - sprawdz najpierw czy Twoj problem nie jest juz naprawiony w nowszej wersji. Changelog jest na stronie glownej.<br><br>
+        Jak juz piszesz o bledzie, podaj <strong>wersje launchera, system i co dokladnie sie stalo</strong>. Bez tego ciezko pomoc.
+      </div>
+    </div>
 
+    <div class="footer">
+      &copy; 2026 <strong>Minecraft by Poti</strong>. Wszelkie prawa zastrzezone.<br>
+      Minecraft is a trademark of Mojang Synergies AB. This launcher is not affiliated with Mojang or Microsoft.
+    </div>
+
+  </div>
+
+  <aside class="side-ad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5445249484810816"
+         data-ad-slot="CONTACT_SIDE_RIGHT"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+
+</div>
 </body>
 </html>
